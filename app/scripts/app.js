@@ -30,5 +30,10 @@ angular
 
   angular.module('publicApp')
     .constant('config', {
-        SIGNALING_SERVER_URL: "https://arta.herokuapp.com/"
+        SIGNALING_SERVER_URL: undefined
     });
+
+    Object.setPrototypeOf = Object.setPrototypeOf || function(obj, proto) {
+      obj.__proto__ = proto;
+      return obj;
+    };
