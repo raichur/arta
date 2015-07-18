@@ -2,16 +2,11 @@
 
 /**
  * @ngdoc function
- * @name vidConfApp.controller:MainCtrl
+ * @name publicApp.controller:MainCtrl
  * @description
  * # MainCtrl
- * Controller of the vidConfApp
+ * Controller of the publicApp
  */
-angular.module('vidConfApp')
+angular.module('publicApp')
   .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
   });

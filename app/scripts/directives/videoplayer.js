@@ -2,11 +2,11 @@
 
 /**
  * @ngdoc directive
- * @name vidConfApp.directive:videoPlayer
+ * @name publicApp.directive:videoPlayer
  * @description
  * # videoPlayer
  */
-angular.module('vidConfApp')
+angular.module('publicApp')
   .directive('videoPlayer', function () {
     return {
       template: '<div><video ng-src="" autoplay></video></div>',
@@ -20,9 +20,9 @@ angular.module('vidConfApp')
         scope.trustSrc = function() {
           if(!scope.vidSrc) {
             return undefined;
-          } else {
-            return $sce.trustAsResourceUrl(scope.vidSrc);
-          };
-        }
+          }
+          return $sce.trustAsResourceUrl(scope.vidSrc);
+        };
+      }
     };
   });

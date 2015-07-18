@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc service
- * @name vidConfApp.Room
+ * @name publicApp.Room
  * @description
  * # Room
- * Factory in the vidConfApp.
+ * Factory in the publicApp.
  */
-angular.module('vidConfApp')
+angular.module('publicApp')
   .factory('Room', function ($rootScope, $q, Io, config) {
     var iceConfig = { 'iceServers': [{ 'url': 'stun:stun.l.google.com:19302'}]},
       peerConnections = {},

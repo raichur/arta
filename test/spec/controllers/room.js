@@ -3,7 +3,7 @@
 describe('Controller: RoomCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('vidConfApp'));
+  beforeEach(module('publicApp'));
 
   var RoomCtrl,
     scope;

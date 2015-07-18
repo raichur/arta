@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc service
- * @name vidConfApp.VideoStream
+ * @name publicApp.VideoStream
  * @description
  * # VideoStream
- * Factory in the vidConfApp.
+ * Factory in the publicApp.
  */
-angular.module('vidConfApp')
+angular.module('publicApp')
   .factory('VideoStream', function () {
     var stream;
 

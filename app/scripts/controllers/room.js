@@ -2,20 +2,11 @@
 
 /**
  * @ngdoc function
- * @name vidConfApp.controller:RoomCtrl
+ * @name publicApp.controller:RoomCtrl
  * @description
  * # RoomCtrl
- * Controller of the vidConfApp
+ * Controller of the publicApp
  */
-
-angular.module('vidConfApp')
-  .controller('RoomCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
 
 angular.module('publicApp')
   .controller('RoomCtrl', function ($sce, VideoStream, $location, $routeParams, $scope, Room) {

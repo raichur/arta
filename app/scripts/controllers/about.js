@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name vidConfApp.controller:AboutCtrl
+ * @name publicApp.controller:AboutCtrl
  * @description
  * # AboutCtrl
- * Controller of the vidConfApp
+ * Controller of the publicApp
  */
-angular.module('vidConfApp')
+angular.module('publicApp')
   .controller('AboutCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',

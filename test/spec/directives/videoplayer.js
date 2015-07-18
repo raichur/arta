@@ -3,7 +3,7 @@
 describe('Directive: videoPlayer', function () {
 
   // load the directive's module
-  beforeEach(module('vidConfApp'));
+  beforeEach(module('publicApp'));
 
   var element,
     scope;

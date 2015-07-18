@@ -2,15 +2,14 @@
 
 /**
  * @ngdoc overview
- * @name vidConfApp
+ * @name publicApp
  * @description
- * # vidConfApp
+ * # publicApp
  *
  * Main module of the application.
  */
 angular
-  .module('vidConfApp', [
-    'ngAnimate',
+  .module('publicApp', [
     'ngRoute'
   ])
   .config(function ($routeProvider) {

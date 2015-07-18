@@ -3,7 +3,7 @@
 describe('Service: VideoStream', function () {
 
   // load the service's module
-  beforeEach(module('vidConfApp'));
+  beforeEach(module('publicApp'));
 
   // instantiate service
   var VideoStream;

@@ -2,10 +2,10 @@
 
 /**
  * @ngdoc service
- * @name vidConfApp.Io
+ * @name publicApp.Io
  * @description
  * # Io
- * Factory in the vidConfApp.
+ * Factory in the publicApp.
  */
  angular.module('publicApp')
    .factory('Io', function () {

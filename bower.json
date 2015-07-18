@@ -11,7 +11,7 @@
     "angular-mocks": "^1.3.0"
   },
   "appPath": "app",
-  "moduleName": "vidConfApp",
+  "moduleName": "publicApp",
   "overrides": {
     "bootstrap": {
       "main": [

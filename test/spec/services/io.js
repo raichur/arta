@@ -3,7 +3,7 @@
 describe('Service: Io', function () {
 
   // load the service's module
-  beforeEach(module('vidConfApp'));
+  beforeEach(module('publicApp'));
 
   // instantiate service
   var Io;
