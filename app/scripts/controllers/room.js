@@ -51,7 +51,7 @@ angular.module('publicApp')
       });
     });
     Room.on('peer.disconnected', function(peer) {
-      console.log("Clien disconnected, removing stream");
+      console.log("Client disconnected, removing stream");
       $scope.peers = $scope.peers.filter(function(p) {
         return p.id !== peer.id;
       });
