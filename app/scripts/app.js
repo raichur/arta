@@ -30,5 +30,5 @@ angular
 
   angular.module('publicApp')
     .constant('config', {
-        SIGNALIG_SERVER_URL: "https://arta.herokuapp.com/"
+        SIGNALING_SERVER_URL: "https://arta.herokuapp.com/"
     });

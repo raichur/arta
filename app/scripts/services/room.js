@@ -53,9 +53,74 @@ angular.module('vidConfApp')
       switch (data.type) {
         case 'sdp-offer':
           pc.setRemoteDescription(new RTCSessionDescription(data.sdp), function() {
-
-          })
+            console.log("Setting remote description by offer");
+            pc.createAnswer(function(sdp) {
+              pc.setLocalDescription(sdp);
+              socket.emit('msg', { by: currentId, to: data.by, sdp: sdp, type: 'sdp-answer' });
+            });
+          });
+          break;
+        case 'sdp-answer':
+        pc.setRemoteDescription(new RTCSessionDescription(data.sdp), function () {
+          console.log('Setting remote description by answer');
+        }, function (e) {
+          console.error(e);
+        });
+        break;
+      case 'ice':
+        if (data.ice) {
+          console.log('Adding ice candidates');
+          pc.addIceCandidate(new RTCIceCandidate(data.ice));
+        }
+        break;
       }
     }
 
+    var socket = Io.connect(config.SIGNALING_SERVER_URL),
+        connected = false;
+
+    function addHandlers(socket) {
+      socket.on('peer.connected', function(params) {
+        makeOffer(params.id);
+      });
+      socket.on('peer.disconnected', function(data) {
+        api.trigger('peer.disconnected', [data]);
+        if(!rootScope.$$digest) {
+          $rootScope.$apply();
+        }
+      });
+      socket.on('msg', function(data) {
+        handleMessage(data);
+      });
+    }
+
+    var api = {
+      joinRoom: function(r) {
+        if(!connected) {
+          socket.emit('init', {room: r}, function(roomId, id) {
+            currentId = id;
+            roomId = roomId;
+          });
+          connected = true;
+        }
+      },
+      createRoom: function() {
+        var d = $q.defer();
+        socket.emit('init', null, function(roomId, id) {
+          d.resolve(roomId);
+          roomId = roomId;
+          currentId = id;
+          connected = true;
+        });
+        return d.promise;
+      },
+      init: function(s) {
+        stream = s;
+      }
+    };
+    EventEmitter.call(api);
+    Object.setPrototypeOf(api, EventEmitter.prototype);
+
+    addHandlers(socket);
+    return api;
   });
