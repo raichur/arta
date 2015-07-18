@@ -8,7 +8,7 @@
  * Factory in the publicApp.
  */
 angular.module('publicApp')
-  .factory('VideoStream', function () {
+  .factory('VideoStream', function ($q) {
     var stream;
 
     return {
