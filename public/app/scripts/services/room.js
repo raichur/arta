@@ -103,8 +103,8 @@ angular.module('publicApp')
       joinRoom: function (r) {
         if (!connected) {
           socket.emit('init', { room: r }, function (roomId, id) {
-            currentId: id;
-            roomId: roomId;
+            currentId = id;
+            roomId = roomId;
           });
           connected = true;
         }
