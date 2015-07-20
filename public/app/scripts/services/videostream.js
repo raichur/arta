@@ -8,7 +8,7 @@
  * Probides video stream using getUserMedia.
  */
 angular.module('publicApp')
-  .factory('VideoStream', function () {
+  .factory('VideoStream', function ($q) {
   	var stream;
 
 	return {
@@ -29,5 +29,5 @@ angular.module('publicApp')
 				return d.promise;
 			}
 		}
-	}
+	};
   });

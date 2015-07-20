@@ -14,18 +14,20 @@ angular
   ])
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/', {
+      .when('/room/:roomId', {
         templateUrl: 'views/room.html',
-        controller: 'RoomCtrl',
+        controller: 'RoomCtrl'
       })
       .when('/room', {
         templateUrl: 'views/room.html',
-        controller: 'RoomCtrl',
+        controller: 'RoomCtrl'
       })
       .otherwise({
         redirectTo: '/room'
       });
-  })
-  .constant('config'), {
-     SIGNALING_SERVER_URL: "http://arta.herokuapp.com";
+  });
+
+ angular.module('publicApp')
+  .constant('config', {
+     SIGNALING_SERVER_URL: undefined
   });
