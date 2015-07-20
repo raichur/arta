@@ -1,6 +1,7 @@
 node_modules
 test
-/dist
-/.tmp
+/public/dist
+public/.tmp
 .sass-cache
-/bower_components
+/public/bower_components
+.DS_Store
