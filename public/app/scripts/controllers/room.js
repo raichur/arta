@@ -5,7 +5,7 @@
  * @name publicApp.controller:RoomCtrl
  * @description
  * # RoomCtrl
- * Controller of the publicApp
+ * Room controller
  */
 angular.module('publicApp')
   .controller('RoomCtrl', function ($sce, VideoStream, $location, $routeParams, $scope, Room) {

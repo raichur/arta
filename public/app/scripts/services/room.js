@@ -36,12 +36,13 @@ angular.module('publicApp')
       };
       return pc;
     }
-
+    // Initiating new offer
     function makeOffer (id) {
       var pc = getPeerConnection(id);
       pc.createOffer(function (sdp) {
         pc.setLocalDescription(sdp);
         console.log("Creating an offer for", id);
+        // Fired socket.io event to send new SDP offer
         socket.emit('msg', { by: currentId, to: id, sdp: sdp, type: 'sdp-offer' });
       }, function (e) {
         console.log(e);
@@ -49,6 +50,7 @@ angular.module('publicApp')
         { mandatory: { OfferToReceiveVideo: true, OfferToReceiveAudio: true }});
     }
 
+    // Handles the message based on the three types: sdp-offer, sdp-answer, and ice
     function handleMessage (data) {
       var pc = getPeerConnection(data.by);
       switch (data.type) {
@@ -80,6 +82,7 @@ angular.module('publicApp')
     var socket = Io.connect(config.SIGNALING_SERVER_URL),
         connected = false;
 
+    // Create handlers
     function addHandlers (socket) {
       socket.on('peer.connected', function (params) {
         makeOffer(params.id);
@@ -95,6 +98,7 @@ angular.module('publicApp')
       });
     }
 
+    // The Room API
     var api = {
       joinRoom: function (r) {
         if (!connected) {

@@ -30,4 +30,4 @@ angular.module('publicApp')
 			}
 		}
 	};
-  });
+});

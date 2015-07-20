@@ -4,12 +4,12 @@
  * @ngdoc directive
  * @name publicApp.directive:videoPlayer
  * @description
- * # videoPlayer
+ * # video player
  */
 angular.module('publicApp')
-  .directive('videoPlayer', function () {
+  .directive('videoPlayer', function ($sce) {
     return {
-      template: '<div><video ng-src="" autoplay></video></div>',
+      template: '<div><video ng-src="{{trustSrc()}}" autoplay></video></div>',
       restrict: 'E',
       replace: true,
       scope: {

@@ -3,6 +3,6 @@ test
 /public/dist
 /public/.tmp
 .sass-cache
-/public/bower_components
+
 .DS_Store
 /public/app/.htaccess
