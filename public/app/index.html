@@ -20,9 +20,8 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
+  <div ng-view></div>
 
-   <script src="https://cdn.socket.io/socket.io-1.3.5.js"></script>
-   <!--<script src="/socket.io/socket.io.js"></script>-->
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -32,14 +31,16 @@
     <!-- endbower -->
     <!-- endbuild -->
 
+    
+    <script src="/socket.io/socket.io.js"></script>
+
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
         <script src="scripts/services/videostream.js"></script>
         <script src="scripts/services/io.js"></script>
         <script src="scripts/controllers/room.js"></script>
         <script src="scripts/services/room.js"></script>
+        <script src="scripts/directives/videoplayer.js"></script>
         <!-- endbuild -->
 </body>
 </html>
