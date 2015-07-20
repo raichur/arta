@@ -25,4 +25,7 @@ angular
       .otherwise({
         redirectTo: '/room'
       });
+  })
+  .constant('config'), {
+     SIGNALING_SERVER_URL: "http://arta.herokuapp.com";
   });
