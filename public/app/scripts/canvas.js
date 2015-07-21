@@ -26,7 +26,8 @@ var canvasDiv = $('#canvas'),
       "white": "#fff",
       "brown": "#795548"
     },
-    currentColor = colors.black;
+    currentColor = colors.black,
+    socket = io.connect("http://localhost:9000");
 
 function setCanvas () {
   canvas = document.createElement('canvas');
@@ -52,13 +53,23 @@ $('#canvas').mousedown(function (e) {
   redraw();
 });
 
+var lastEmit = $.now();
+
 // When you move the cursor over the canvas
 $('#canvas').mousemove(function (e) {
+  socket.emit('mousemove',{
+              'x': e.pageX,
+              'y': e.pageY,
+              'drawing': paint
+          });
+          lastEmit = $.now();
   if (paint) {
     addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true);
     redraw();
   }
 });
+
+
 
 // When the cursor is off the canvas
 $('#canvas').mouseup(function (e) {
