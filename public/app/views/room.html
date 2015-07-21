@@ -7,3 +7,32 @@
     <video ng-src="{{getLocalVideo()}}" autoplay muted></video>
   </div>
 </div>
+
+<div id="canvas"></div>
+<ul id="colors">
+  <div id="tap"></div>
+  <li><button id="clearButton" type="button">✕</button></li>
+  <li>
+    <button class="rainbow" type="button"></button>
+    <div id="colorpicker">
+      <div class="sliders" id="red"></div>
+      <div class="sliders" id="green"></div>
+      <div class="sliders" id="blue"></div>
+      <div class="result"></div>
+      <li><button style="background: #000" class="black" onclick="currentColor = colors.black; $('#tap.noUi-connect').css({'background': currentColor});"></button></li>
+      <li><button style="background: #7B1FA2" class="purple" onclick="currentColor = colors.purple; $('#tap.noUi-connect').css({'background': currentColor});"></button></li>
+      <li><button style="background: #009688" class="teal" onclick="currentColor = colors.teal; $('#tap.noUi-connect').css({'background': currentColor});"></button></li>
+      <li><button style="background: #FFA000" class="amber" onclick="currentColor = colors.amber; $('#tap.noUi-connect').css({'background': currentColor});"></button></li>
+      <li><button style="background: #616161" class="grey" onclick="currentColor = colors.grey; $('#tap.noUi-connect').css({'background': currentColor});"></button></li>
+      <li><button style="background: #FF5722" class="orange" onclick="currentColor = colors.orange; $('#tap.noUi-connect').css({'background': currentColor});"></button></li>
+      <li><button style="background: #FFEB3B" class="yellow" onclick="currentColor = colors.yellow; $('#tap.noUi-connect').css({'background': currentColor});"></button></li>
+      <li><button style="background: #388E3C" class="green" onclick="currentColor = colors.green; $('#tap.noUi-connect').css({'background': currentColor});"></button></li>
+      <li><button style="background: #2196F3" class="blue" onclick="currentColor = colors.blue; $('#tap.noUi-connect').css({'background': currentColor});"></button></li>
+      <li><button style="background: #FF5252" class="red" onclick="currentColor = colors.red; $('#tap.noUi-connect').css({'background': currentColor});"></button></li>
+      <li><button style="background: #C2185B" class="pink" onclick="currentColor = colors.pink; $('#tap.noUi-connect').css({'background': currentColor});"></button></li>
+      <li><button style="background: #303F9F" class="indigo" onclick="currentColor = colors.indigo; $('#tap.noUi-connect').css({'background': currentColor});"></button></li>
+      <li><button style="background: #fff" class="white" onclick="currentColor = colors.white; $('#tap.noUi-connect').css({'background': currentColor});"></button></li>
+      <li><button style="background: #795548" class="brown" onclick="currentColor = colors.brown; $('#tap.noUi-connect').css({'background': currentColor});"></button></li>
+  </div>
+</li>
+</ul>
