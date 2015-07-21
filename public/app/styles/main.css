@@ -59,6 +59,28 @@ body {
   margin-top: 28px;
 }
 
+/* Videos */
+.video-wrapper video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  background-size: cover;
+}
+video:last-child {
+  width: 100px;
+  float: left;
+  margin: 50px;
+  position: fixed;
+  height: auto;
+}
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
